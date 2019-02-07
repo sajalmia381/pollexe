@@ -101,8 +101,8 @@ DATABASES = {
         'NAME': 'protheme_data',
         'USER': 'protheme_admin',
         'PASSWORD': 'LEdd2(+Wm95m',
-        'HOST': 'pollexe.com',
-        'PORT': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
