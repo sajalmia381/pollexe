@@ -1,0 +1,59 @@
+{% extends 'base-site.html' %}
+{% load static %}
+
+{% block title %}Welcome to Home{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+{% block banner %}
+{% endblock %}
+
+{% block content %}
+<section id="content">
+        <div class="content-wrap">
+            <div class="container clearfix">
+
+                <div class="col_three_fifth bothsidebar nobottommargin">
+
+                </div>
+
+                <div class="col_two_fifth nobottommargin col_last">
+
+                    <div class="fancy-title title-border">
+                        <h4>Favourite Locations</h4>
+                    </div>
+
+                    <div id="google-map4" style="height: 300px; position: relative; overflow: hidden;" class="gmap bottommargin"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-err-container"><div class="gm-err-content"><div class="gm-err-icon"><img src="https://maps.gstatic.com/mapfiles/api-3/images/icon_error.png" draggable="false" style="user-select: none;"></div><div class="gm-err-title">Oops! Something went wrong.</div><div class="gm-err-message">This page didn't load Google Maps correctly. See the JavaScript console for technical details.</div></div></div></div></div>
+
+
+                    <div class="fancy-title title-border">
+                        <h4>Gallery</h4>
+                    </div>
+
+                    <div class="col_full masonry-thumbs grid-4 clearfix" data-lightbox="gallery" style="position: relative; height: 161px;">
+                        <a href="images/events/1.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 0px; top: 0px;"><img class="image_fade" src="images/events/thumbs/1.jpg" alt="Gallery Thumb 1"></a>
+                        <a href="images/events/2.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 107px; top: 0px;"><img class="image_fade" src="images/events/thumbs/2.jpg" alt="Gallery Thumb 2"></a>
+                        <a href="images/events/3.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 214px; top: 0px;"><img class="image_fade" src="images/events/thumbs/3.jpg" alt="Gallery Thumb 3"></a>
+                        <a href="images/events/4.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 321px; top: 0px;"><img class="image_fade" src="images/events/thumbs/4.jpg" alt="Gallery Thumb 4"></a>
+                        <a href="images/events/5.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 0px; top: 80.5px;"><img class="image_fade" src="images/events/thumbs/5.jpg" alt="Gallery Thumb 5"></a>
+                        <a href="images/events/6.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 107px; top: 80.5px;"><img class="image_fade" src="images/events/thumbs/6.jpg" alt="Gallery Thumb 6"></a>
+                        <a href="images/events/7.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 214px; top: 80.5px;"><img class="image_fade" src="images/events/thumbs/7.jpg" alt="Gallery Thumb 7"></a>
+                        <a href="images/events/8.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 321px; top: 80.5px;"><img class="image_fade" src="images/events/thumbs/8.jpg" alt="Gallery Thumb 8"></a>
+                    </div>
+
+                    <div class="fancy-title title-border">
+                        <h4>Video</h4>
+                    </div>
+
+                    <div class="fluid-width-video-wrapper" style="padding-top: 56.2%;"><iframe src="//player.vimeo.com/video/30626474" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" id="fitvid0"></iframe></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

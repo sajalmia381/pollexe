@@ -1,0 +1,72 @@
+{% load static %}
+{% url 'page:index' as index_url %}
+{% url 'blog:blog_list' as blog_list_url %}
+{% url 'product:product_list' as product_list %}
+<header id="header" class="full-header dark">
+    <div id="header-wrap">
+        <div class="container clearfix">
+
+            <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+            <!-- Logo
+            ============================================= -->
+            <div id="logo">
+                <!--<a href="{{ index_url }}" class="standard-logo" data-dark-logo="{% static 'images/logo-dark.png' %}"><img src="images/logo.png" alt="Canvas Logo"></a>-->
+                <!--<a href="{{ index_url }}" class="retina-logo" data-dark-logo="{% static 'images/logo-dark@2x.png' %}"><img src="images/logo@2x.png" alt="Canvas Logo"></a>-->
+                <a href="{{ index_url }}" class="standard-logo" data-dark-logo="">POLLEXE Co.</a>
+                <!--<a href="{{ index_url }}" class="retina-logo" data-dark-logo="">POLLEXE Co.</a>-->
+            </div>
+
+            <!-- Primary Navigation
+            ============================================= -->
+            <nav id="primary-menu">
+
+                <ul>
+                    <li><a href="{{ index_url }}">Home</a></li>
+                    <li><a href="{{ product_list }}">Product</a></li>
+                    <li><a href="{{ blog_list_url }}">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+                <!-- Top Cart
+                ============================================= -->
+                <div id="top-cart">
+                    <a href="#" id="top-cart-trigger"><i class="icon-users"></i></a>
+                    <div class="top-cart-content">
+                        <div class="top-cart-items">
+                            <div class="top-cart-item clearfix">
+                                {% if request.user.is_authenticated %}
+                                <div class="top-cart-item-desc">
+                                    <a href="#"><i class="icon-dashboard mr-2"></i> Dashboard</a>
+                                </div>
+                                <div class="top-cart-item-desc mt-3">
+                                    <a href="{% url 'account:logout' %}"><i class="icon-line2-logout mr-2"></i> Logout</a>
+                                </div>
+                                {% else %}
+                                <div class="top-cart-item-desc">
+                                    <a href="{% url 'account:login' %}"><i class="icon-dashboard mr-2"></i>  Login</a>
+                                </div>
+                                <div class="top-cart-item-desc mt-2">
+                                    <a href="{% url 'account:signup' %}"><i class="icon-dashboard mr-2"></i>  Registration</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #top-cart end -->
+
+                <!-- Top Search
+                ============================================= -->
+                <div id="top-search">
+                    <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+                    <form action="search.html" method="get">
+                        <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+                    </form>
+                </div><!-- #top-search end -->
+
+            </nav><!-- #primary-menu end -->
+
+        </div>
+
+    </div>
+</header>

@@ -1,0 +1,204 @@
+{% extends 'base-site.html' %}
+{% load static front_tags  %}
+
+{% block title %}Welcome to Home{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+{% block banner %}
+{% if object_list %}
+<section id="slider" class="slider-element slider-parallax swiper_wrapper full-screen clearfix">
+
+    <div class="slider-parallax-inner">
+
+        <div class="swiper-container swiper-parent">
+            <div class="swiper-wrapper">
+                {% for obj in object_list %}
+                <div class="swiper-slide dark" style="background-image: url('{% if obj.image.url %}{{ obj.image.url }}{% endif %}');">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                            <h2 data-animate="fadeInUp">{{ obj.title }}</h2>
+                            <p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">{{ obj.content }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
+            <div class="slider-arrow-right"><i class="icon-angle-right"></i></div>
+            <div class="slide-number"><div class="slide-number-current"></div><span>/</span><div class="slide-number-total"></div></div>
+        </div>
+
+    </div>
+
+</section>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<section id="content">
+        <div class="content-wrap">
+            <div class="promo promo-full promo-border header-stick bottommargin-lg">
+                <div class="container clearfix">
+                    <h3>Explore Premium <span>Wordpress Theme</span> For Free Download</h3>
+                    <a href="#" class="button button-reveal button-xlarge button-rounded tright"><i class="icon-angle-right"></i><span>Browse Now</span></a>
+                </div>
+            </div>
+
+            <!--<div class="section notopmargin" style="padding: 100px 0;">-->
+                <!--<div class="container clearfix">-->
+                <!--<div class="row grid-item clearfix">-->
+                <!--<div class="col-md-2 grid-image">-->
+                <!--<img src="media/django-summernote/2018-12-31/c5a1cff9-2889-41f8-bd7a-83a03f274c77.jpg" alt="Image 1">-->
+                <!--</div>-->
+                <!--<div class="col-md-2">-->
+                <!--<div class="grid-info clearfix">-->
+                <!--<h3><a href="#">Fresh Arrivals<span>Summer is Coming!</span></a></h3>-->
+                <!--<a href="#" class="more-link clearfix">Shop Now</a>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-2 grid-image">-->
+                <!--<img src="media/django-summernote/2018-12-31/f997bc64-6916-447a-84cb-7999529d321b.jpg" alt="Image 1">-->
+                <!--</div>-->
+                <!--<div class="col-md-2">-->
+                <!--<div class="grid-info clearfix">-->
+                <!--<h3><a href="#">Acessories<span>Check out more Products for your Lifestyles</span></a></h3>-->
+                <!--<a href="#" class="more-link clearfix">Know More</a>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-2 grid-image">-->
+                <!--<img src="media/django-summernote/2018-12-31/8cfcb538-954d-4a9c-b1ec-24ce9a4d0c7e.jpg" alt="Image 1">-->
+                <!--</div>-->
+                <!--<div class="col-md-2">-->
+                <!--<div class="grid-info clearfix">-->
+                <!--<h3><a href="#">Our Store<span>Where we Manufacture!</span></a></h3>-->
+                <!--<i class="icon-map-marker2"></i> <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2233.681463596743!2d-3.19397378404521!3d55.954892680607855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c78e1e83edab%3A0x627ac6bc4414f18b!2sGucci+-+Edinburgh+Harvey+Nichols+Women's!5e0!3m2!1sen!2sus!4v1489749205966" data-lightbox="iframe" class="more-link clearfix">Find Store</a>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div id="oc-images" class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget" data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1" data-items-xl="2">-->
+
+					<!--<div class="oc-item">-->
+						<!--<a href="#"><img src="media/django-summernote/2019-01-03/ef76ee81-bda4-4a01-8445-4ae18961e279.jpg" alt="Image 1"></a>-->
+						<!--<div class="overlay">-->
+							<!--<div class="text-overlay">-->
+								<!--<span class="badge badge-danger">World</span>-->
+								<!--<div class="text-overlay-title">-->
+									<!--<h2>CJI defends collegium system, says don't defame judiciary</h2>-->
+								<!--</div>-->
+								<!--<div class="text-overlay-meta">-->
+									<!--<span>14th Sep 2014</span>-->
+								<!--</div>-->
+								<!--<a href="#" class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm"><span>Read Story</span><i class="icon-angle-right"></i></a>-->
+							<!--</div>-->
+							<!--<div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(0,0,0,0.1)" data-size="80" data-percent="75" data-width="7" data-animate="3000">7.5</div>-->
+						<!--</div>-->
+					<!--</div>-->
+
+            <!--</div>-->
+
+            <div class="container clearfix">
+
+                <div class="col_three_fifth bothsidebar nobottommargin">
+
+                    <div class="fancy-title title-border">
+                        <h3>Latest Themes</h3>
+                    </div>
+
+                    <div id="posts" class="events small-thumbs">
+                        {% for obj in latest_themes %}
+                        <div class="entry clearfix">
+                            <div class="entry-image d-md-none d-lg-block">
+                                <a href="#">
+                                    <img src="images/events/thumbs/1.jpg" alt="Inventore voluptates velit totam ipsa tenetur">
+                                    <div class="entry-date">10<span>Apr</span></div>
+                                </a>
+                            </div>
+                            <div class="entry-c">
+                                <div class="entry-title">
+                                    <h2><a href="#">Inventore voluptates velit totam ipsa tenetur</a></h2>
+                                </div>
+                                <ul class="entry-meta clearfix">
+                                    <li><span class="badge badge-warning">Private</span></li>
+                                    <li><a href="#"><i class="icon-time"></i> 11:00 - 19:00</a></li>
+                                    <li><a href="#"><i class="icon-map-marker2"></i> Melbourne</a></li>
+                                </ul>
+                                <div class="entry-content">
+                                    <a href="#" class="btn btn-secondary" disabled="disabled">Buy Tickets</a> <a href="#" class="btn btn-danger">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="col_two_fifth nobottommargin col_last">
+
+                    <div class="fancy-title title-border">
+                        <h4> Weekly Trending Theme</h4>
+                    </div>
+
+                    <div id="google-map4" style="height: 300px; position: relative; overflow: hidden;" class="gmap bottommargin"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-err-container"><div class="gm-err-content"><div class="gm-err-icon"><img src="https://maps.gstatic.com/mapfiles/api-3/images/icon_error.png" draggable="false" style="user-select: none;"></div><div class="gm-err-title">Oops! Something went wrong.</div><div class="gm-err-message">This page didn't load Google Maps correctly. See the JavaScript console for technical details.</div></div></div></div></div>
+
+
+                    <div class="fancy-title title-border">
+                        <h4>Themes Gallery</h4>
+                    </div>
+
+                    <div class="col_full masonry-thumbs grid-4 clearfix" data-lightbox="gallery" style="position: relative; height: 161px;">
+                        <a href="images/events/1.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 0px; top: 0px;"><img class="image_fade" src="images/events/thumbs/1.jpg" alt="Gallery Thumb 1"></a>
+                        <a href="images/events/2.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 107px; top: 0px;"><img class="image_fade" src="images/events/thumbs/2.jpg" alt="Gallery Thumb 2"></a>
+                        <a href="images/events/3.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 214px; top: 0px;"><img class="image_fade" src="images/events/thumbs/3.jpg" alt="Gallery Thumb 3"></a>
+                        <a href="images/events/4.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 321px; top: 0px;"><img class="image_fade" src="images/events/thumbs/4.jpg" alt="Gallery Thumb 4"></a>
+                        <a href="images/events/5.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 0px; top: 80.5px;"><img class="image_fade" src="images/events/thumbs/5.jpg" alt="Gallery Thumb 5"></a>
+                        <a href="images/events/6.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 107px; top: 80.5px;"><img class="image_fade" src="images/events/thumbs/6.jpg" alt="Gallery Thumb 6"></a>
+                        <a href="images/events/7.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 214px; top: 80.5px;"><img class="image_fade" src="images/events/thumbs/7.jpg" alt="Gallery Thumb 7"></a>
+                        <a href="images/events/8.jpg" data-lightbox="gallery-item" style="width: 107px; position: absolute; left: 321px; top: 80.5px;"><img class="image_fade" src="images/events/thumbs/8.jpg" alt="Gallery Thumb 8"></a>
+                    </div>
+
+                    <div class="fancy-title title-border">
+                        <h4>Video</h4>
+                    </div>
+
+                    <div class="fluid-width-video-wrapper" style="padding-top: 56.2%;"><iframe src="//player.vimeo.com/video/30626474" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" id="fitvid0"></iframe></div>
+
+                </div>
+            </div>
+
+            <!-- ================================= Posts =================================== -->
+            <div class="container clearfix">
+                <div class="post-grid grid-container grid-3 clearfix mt-5" data-layout="fitRows">
+
+						<div class="entry clearfix">
+							<div class="entry-image">
+								<a href="images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="images/blog/grid/17.jpg" alt="Standard Post with Image"></a>
+							</div>
+							<div class="entry-title">
+								<h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
+							</div>
+							<ul class="entry-meta clearfix">
+								<li><i class="icon-calendar3"></i> 10th Feb 2014</li>
+								<li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
+								<li><a href="#"><i class="icon-camera-retro"></i></a></li>
+							</ul>
+							<div class="entry-content">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur!</p>
+								<a href="blog-single.html"class="more-link">Read More</a>
+							</div>
+						</div>
+
+
+					</div><!-- #posts end -->
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
