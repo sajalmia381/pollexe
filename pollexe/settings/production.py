@@ -143,13 +143,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-STATIC_ROOT = os.path.join('/storage/prothemeslab/pollexe.com', 'static_cdn', 'static_root')
-
-## For django-storages
-LOCATION = 'ftp://<pollexe_admin>:<7?qS[4TqAm(U>@<pollexe.com>:<21>'
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'static_root')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join('/storage/prothemeslab/pollexe.com', 'static_cdn', 'media_root')
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'media_root')
 
 # Message
 from django.contrib.messages import constants as messages
@@ -164,3 +161,5 @@ MESSAGE_TAGS = {
 # summernote Configration option
 # from .summernote.conf import *
 
+## For django-storages
+LOCATION = 'ftp://<pollexe_admin>:<7?qS[4TqAm(U>@<pollexe.com>:<21>'
